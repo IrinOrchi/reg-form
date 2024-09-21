@@ -1,0 +1,34 @@
+<section class="p-4 bg-white rounded shadow-md">
+    <h3 class="text-xl font-bold mb-6">Account Information</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Username -->
+      <app-input-field
+        label="Username"
+        name="txtUserName"
+        id="txtUserName"
+        placeholder="Type Username"
+        [errorMsg]="'Username is required'"
+      ></app-input-field>
+  
+      <!-- Password -->
+      <app-input-field
+        label="Password"
+        type="password"
+        name="txtPassword"
+        id="txtPassword"
+        placeholder="Use maximum 8 characters"
+        [errorMsg]="'Password is required'"
+      ></app-input-field>
+  
+      <!-- Confirm Password -->
+      <app-input-field
+        label="Confirm Password"
+        type="password"
+        name="txtConfirmPassword"
+        id="txtConfirmPassword"
+        placeholder="Retype password"
+        [errorMsg]="'Confirm Password is required'"
+      ></app-input-field>
+    </div>
+  </section>
+  
