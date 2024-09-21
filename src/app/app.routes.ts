@@ -1,7 +1,9 @@
 import { Routes } from '@angular/router';
-import { CreateAccountComponent } from './pages/create-account/create-account.component'; // Update the path
+import { CreateAccountComponent } from './pages/create-account/create-account.component';
 
 export const routes: Routes = [
-  { path: 'create-account', component: CreateAccountComponent }, 
-  { path: '', redirectTo: '/create-account', pathMatch: 'full' }, 
+    {
+        path: 'register',
+        component: CreateAccountComponent
+    }
 ];
