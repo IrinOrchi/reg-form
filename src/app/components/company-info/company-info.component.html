@@ -1,0 +1,71 @@
+<!-- Company Details Information -->
+<section class="p-4 bg-white rounded shadow-md">
+
+<section class="my-6">
+    <!-- Section Title -->
+    <h3 class="text-[#337ab7] mt-0 mb-7 text-xl font-semibold">Company Details Information</h3>
+  
+    <!-- Form Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      
+      <!-- Company Name (English) -->
+      <div class="col-span-1">
+        <app-input-field
+          label="Company Name"
+          name="txtCompanyName"
+          id="txtCompanyName"
+          placeholder="Type Company Name"
+          [maxLength]="120"
+          [value]="companyDetails.companyName"
+          errorMessage="Company Name is required">
+        </app-input-field>
+      </div>
+      
+      <!-- Company Name (Bangla) -->
+      <div class="col-span-1">
+        <app-input-field
+          label="কোম্পানির নাম (বাংলায়)"
+          name="txtCompanyNameBangla"
+          id="txtCompanyNameBangla"
+          placeholder="কোম্পানির নাম বাংলায় লিখুন"
+          [value]="companyDetails.companyNameBangla"
+          [maxLength]="120"
+          [isRequired]="false">
+        </app-input-field>
+      </div>
+  
+      <!-- Year of Establishment -->
+      <div class="col-span-1">
+        <app-input-field
+          label="Year of Establishment"
+          name="txtCompanyEstablished"
+          id="txtCompanyEstablished"
+          placeholder="Type Company's Establishment Year, e.g. 2003"
+          [value]="companyDetails.companyEstablished"
+          [maxLength]="4"
+          [isRequired]="true">
+        </app-input-field>
+      </div>
+  
+      <!-- Company Size Dropdown -->
+      <div class="col-span-1">
+        <label for="ComSize" class="block text-sm font-medium text-gray-700">
+          Company Size <span class="text-red-600">*</span>
+        </label>
+        <select name="ComSize" id="ComSize" 
+          class="w-full h-10 px-3 mt-2 text-sm text-gray-600 bg-white border border-gray-300 rounded-md shadow-inner focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-150 ease-in-out">
+          <option value="-1">Select Company Size</option>
+          <option value="1-25">1-25 employees</option>
+          <option value="26-50">26-50 employees</option>
+          <option value="51-100">51-100 employees</option>
+          <option value="101-500">101-500 employees</option>
+          <option value="501-1000">501-1000 employees</option>
+          <option value="1000-0">1000+ employees</option>
+        </select>
+        <p class="text-red-600 text-sm mt-2" *ngIf="companyDetails.companySize === '-1'">
+          Company Size is required
+        </p>
+      </div>
+    </div>
+  </section>
+  

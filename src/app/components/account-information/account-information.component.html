@@ -1,5 +1,7 @@
 <section class="p-4 bg-white rounded shadow-md">
-    <h3 class="text-xl font-bold mb-6">Account Information</h3>
+  <section class="my-6">
+    <!-- Section Title -->
+    <h3 class="text-[#337ab7] mt-0 mb-7 text-xl font-semibold">Account Information</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Username -->
       <app-input-field
@@ -7,7 +9,7 @@
         name="txtUserName"
         id="txtUserName"
         placeholder="Type Username"
-        [errorMsg]="'Username is required'"
+       
       ></app-input-field>
   
       <!-- Password -->
@@ -17,7 +19,7 @@
         name="txtPassword"
         id="txtPassword"
         placeholder="Use maximum 8 characters"
-        [errorMsg]="'Password is required'"
+ 
       ></app-input-field>
   
       <!-- Confirm Password -->
@@ -27,7 +29,7 @@
         name="txtConfirmPassword"
         id="txtConfirmPassword"
         placeholder="Retype password"
-        [errorMsg]="'Confirm Password is required'"
+      
       ></app-input-field>
     </div>
   </section>

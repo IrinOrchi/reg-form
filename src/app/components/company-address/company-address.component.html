@@ -1,0 +1,77 @@
+<section class="p-4 bg-white rounded shadow-md">
+
+    <section class="my-6">
+<h4 class="mt-5 mb-[15px] text-[16px] font-semibold">
+    Company Address
+    <span class="text-red-500">*</span>
+</h4>
+
+<select class="block w-full h-[34px] py-[6px] px-[12px] text-[14px] leading-[1.6] text-[#555] bg-white rounded border-2 border-[#e4e4e4] shadow-inner transition-colors transition-shadow focus:outline-none focus:ring focus:border-[#bdbdbd]"
+    name="Country" id="Country" [(ngModel)]="selectedCountry">
+    <option value="-1">Select Country</option>
+    <option value="1"selected="">Bangladesh</option>
+    <option value="2">India</option>
+    <option value="3">Pakistan</option>
+    <option value="4">USA</option>
+    <option value="5">Russia</option>
+    <option value="6">UK</option>
+    <option value="7">Canada</option>
+    <option value="8">Australia</option>
+</select>
+
+<div *ngIf="isBangladeshSelected()">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="col-span-1">
+            <select name="SelDis" id="SelDis" class="w-full h-8 px-3 mt-3 text-sm text-gray-600 bg-white border border-gray-300 rounded-md shadow-inner transition-all ease-in-out duration-150 focus:ring-indigo-500 focus:border-indigo-500">
+                <option value="-1">Select District</option>
+                <option value="Dh">Dhaka</option>
+                <option value="Sy">Sylhet</option>
+                <option value="Ba">Barishal</option>
+                <option value="Ra">Rangpur</option>
+                <option value="Chi">Chittagong</option>
+                <option value="Ga">Gazipur</option>
+                <option value="Mym">Mymenshing</option>
+            </select>  
+        </div>
+        <div class="col-span-1">
+            <select name="ComSize" id="ComSize" class="w-full h-8 px-3 mt-3 text-sm text-gray-600 bg-white border border-gray-300 rounded-md shadow-inner transition-all ease-in-out duration-150 focus:ring-indigo-500 focus:border-indigo-500">
+                <option value="-1">Select Thana</option>
+                <option value="10">Tejgaon</option>
+                <option value="11">Sreepur</option>
+                <option value="12">Naria</option>
+                <option value="13">Cantonment Thana</option>
+                <option value="14">Jajira</option>
+                <option value="15">Norail</option>
+            </select>  
+        </div>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="col-span-1">
+            <textarea class="block w-full p-[6px_12px] text-[14px] mt-6 leading-[1.42857143] text-[#555] bg-white rounded border-2 border-[#e4e4e4] shadow-inner transition-colors transition-shadow focus:outline-none focus:ring focus:border-[#bdbdbd] resize-y"
+                rows="3" name="CompanyAddress" id="CompanyAddress" maxlength="300" placeholder="Write Company Address"></textarea>
+        </div>
+        
+        <div class="col-span-1">
+            <textarea class="block w-full p-[6px_12px] text-[14px] mt-6 leading-[1.42857143] text-[#555] bg-white rounded border-2 border-[#e4e4e4] shadow-inner transition-colors transition-shadow focus:outline-none focus:ring focus:border-[#bdbdbd] resize-y"
+                rows="3" name="CompanyAddressBng" id="CompanyAddressBng" maxlength="300" placeholder="কোম্পানীর ঠিকানা বাংলায় লিখুন"></textarea>
+        </div>
+    </div> 
+</div>
+
+<div *ngIf="!isBangladeshSelected()">
+    <input class="block w-full h-[34px] py-[6px] px-[12px] mt-6 text-[14px] leading-[1.6] text-[#555] bg-white rounded border-2 border-[#e4e4e4] shadow-inner transition-colors transition-shadow focus:outline-none focus:ring focus:border-[#bdbdbd]"
+        placeholder="Write City">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="col-span-1">
+            <textarea class="block w-full p-[6px_12px] text-[14px] mt-6 leading-[1.42857143] text-[#555] bg-white rounded border-2 border-[#e4e4e4] shadow-inner transition-colors transition-shadow focus:outline-none focus:ring focus:border-[#bdbdbd] resize-y"
+                rows="3" name="CompanyAddress" id="CompanyAddress" maxlength="300" placeholder="Write Company Address"></textarea>
+        </div>
+        
+        <div class="col-span-1">
+            <textarea class="block w-full p-[6px_12px] text-[14px] mt-6 leading-[1.42857143] text-[#555] bg-white rounded border-2 border-[#e4e4e4] shadow-inner transition-colors transition-shadow focus:outline-none focus:ring focus:border-[#bdbdbd] resize-y"
+                rows="3" name="CompanyAddressBng" id="CompanyAddressBng" maxlength="300" placeholder="কোম্পানীর ঠিকানা বাংলায় লিখুন"></textarea>
+        </div>
+    </div>   
+</div>
