@@ -26,5 +26,4 @@ export class ContactComponent {
     return !(charCode > 31 && (charCode < 48 || charCode > 57));
   }
 
-  // Add more validation and form submission logic if needed
 }
