@@ -1,11 +1,13 @@
 
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-input-field',
   templateUrl: './input-field.component.html',
   styleUrls: ['./input-field.component.css'],
   standalone: true,  // Ensure this is standalone if needed
+  imports: [CommonModule],
 })
 export class InputFieldComponent {
   @Input() label!: string;
@@ -15,3 +17,4 @@ export class InputFieldComponent {
   @Input() placeholder!: string;
   @Input() errorMsg!: string;
 }
+

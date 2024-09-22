@@ -3,7 +3,7 @@ import { CreateAccountComponent } from './pages/create-account/create-account.co
 
 export const routes: Routes = [
     {
-        path: 'register',
+        path: 'Create',
         component: CreateAccountComponent
     }
 ];
