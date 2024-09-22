@@ -1,0 +1,80 @@
+<section class="p-4 bg-white rounded shadow-md">
+        <section class="my-6">
+    <h3 class="text-[#337ab7] mt-0 mb-7 text-xl font-semibold">Contact Information</h3>
+
+    <h4 class="text-md font-semibold mb-3">Primary Contact</h4>
+  
+    <div class="flex flex-wrap -mx-4">
+      <!-- Contact Person's Name -->
+      <div class="w-full sm:w-1/2 px-4 mb-4">
+        <div class="form-group">
+          <label for="txtContactPerson" class="block font-medium text-sm mb-2">
+            Contact Person's Name <span class="text-red-600">*</span>
+          </label>
+          <input type="text"
+                 class="form-control w-full p-2 text-sm leading-tight border border-gray-300 rounded-md shadow-inner focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-150 ease-in-out"
+                 maxlength="100"
+                 name="txtContactPerson"
+                 id="txtContactPerson"
+                 placeholder="Type contact person's name"
+                 [(ngModel)]="contactPerson"
+                 required>
+          <p *ngIf="contactPersonError" class="text-red-500 text-xs mt-1">This field is required.</p>
+        </div>
+      </div>
+  
+      <!-- Contact Person's Designation -->
+      <div class="w-full sm:w-1/2 px-4 mb-4">
+        <div class="form-group">
+          <label for="txtDesignation" class="block font-medium text-sm mb-2">
+            Contact Person's Designation <span class="text-red-600">*</span>
+          </label>
+          <input type="text"
+                 class="form-control w-full p-2 text-sm leading-tight border border-gray-300 rounded-md shadow-inner focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-150 ease-in-out"
+                 maxlength="100"
+                 name="txtDesignation"
+                 id="txtDesignation"
+                 placeholder="Type contact person's designation"
+                 [(ngModel)]="designation"
+                 required>
+          <p *ngIf="designationError" class="text-red-500 text-xs mt-1">This field is required.</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="flex flex-wrap -mx-4">
+      <!-- Contact Person's Email -->
+      <div class="w-full sm:w-1/2 px-4 mb-4">
+        <div class="form-group">
+          <label for="txtContactEmail" class="block font-medium text-sm mb-2">
+            Contact Person's Email <span class="text-red-600">*</span>
+          </label>
+          <input type="email"
+                 class="form-control w-full p-2 text-sm leading-tight border border-gray-300 rounded-md shadow-inner focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-150 ease-in-out"
+                 maxlength="45"
+                 name="txtContactEmail"
+                 id="txtContactEmail"
+                 placeholder="Type contact person's email"
+                 [(ngModel)]="email"
+                 required>
+          <p *ngIf="emailError" class="text-red-500 text-xs mt-1">Please provide a valid email address.</p>
+        </div>
+      </div>
+  
+      <!-- Contact Person's Mobile -->
+      <div class="w-full sm:w-1/2 px-4 mb-4">
+        <div class="form-group">
+          <label for="txtContactMobile" class="block font-medium text-sm mb-2">Contact Person's Mobile</label>
+          <input type="tel"
+                 class="form-control w-full p-2 text-sm leading-tight border border-gray-300 rounded-md shadow-inner focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-150 ease-in-out"
+                 name="txtContactMobile"
+                 id="txtContactMobile"
+                 placeholder="Mobile number"
+                 maxlength="13"
+                 [(ngModel)]="mobile"
+                 (keypress)="isNumberKey($event)">
+        </div>
+      </div>
+    </div>
+  </section>
+  

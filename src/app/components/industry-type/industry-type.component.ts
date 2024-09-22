@@ -1,39 +1,51 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-industry-type',
   standalone: true,
-  imports: [CommonModule],
+  imports:[FormsModule, CommonModule],
   templateUrl: './industry-type.component.html',
   styleUrls: ['./industry-type.component.scss']
 })
 export class IndustryTypeComponent {
+  searchQuery: string = '';
   selectedCategory: string = '';
 
   types = [
     { label: 'Advertising Agency', value: 'Teaching' },
-    { label: 'Advertising Technology (AdTech) Startup', value: 'Technology' },
-    { label: 'App Developer', value: 'Technology' },
-    { label: 'Architecture Firm', value: 'Architecture' },
+    { label: 'Software Firm', value: 'Technology' },
     { label: 'Civil Engineering', value: 'Engineering' },
     { label: 'Electrical Engineering', value: 'Engineering' },
-    { label: 'Software Development', value: 'Technology' },
-    { label: 'Healthcare Services', value: 'Healthcare' },
-    { label: 'Financial Consulting', value: 'Finance' },
-    { label: 'Hospitality Management', value: 'Hospitality' }
-   
+    { label: 'Architecture Firm', value: 'Archtecture' },
+    { label: 'Hospitality Management', value: 'Hospitality' },
+    { label: 'NGO ', value: 'Healthcare' },
+    { label: 'Law Firm', value: 'Finance' },
+    { label: 'Educational Institute', value: 'Teaching' }
+    
   ];
 
-  getTypes() {
-    if (this.selectedCategory === 'Others' || this.selectedCategory === '') {
-      return this.types;
+  filteredTypes = [...this.types]; 
+
+  // Handle search input change
+  onSearchQueryChange() {
+    this.filteredTypes = this.types.filter(type => 
+      type.label.toLowerCase().includes(this.searchQuery.toLowerCase()));
+  }
+
+  // Handle category change
+  onCategoryChange(event: any) {
+    this.selectedCategory = event.target.value;
+
+    if (this.selectedCategory === '' || this.selectedCategory === 'Others') {
+      this.filteredTypes = [...this.types];
     } else {
-      return this.types.filter(type => type.value === this.selectedCategory);
+      this.filteredTypes = this.types.filter(type => type.label.includes(this.selectedCategory));
     }
   }
 
-  onCategoryChange(event: any) {
-    this.selectedCategory = event.target.value;
+  addNewIndustry() {
+    console.log('Add new industry clicked');
   }
 }

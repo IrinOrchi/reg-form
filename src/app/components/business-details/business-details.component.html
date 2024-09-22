@@ -1,0 +1,66 @@
+<!-- Business Description -->
+ <section class="p-4 bg-white rounded shadow-md">
+  <section class="my-6">
+<label for="txtDescription" class="text-black font-semibold inline-block w-full mt-3 max-w-full font-sans text-base mb-2.5 leading-[1.4286]">
+    Business Description
+  </label>
+  <textarea 
+    class="w-full p-1.5 text-sm leading-[1.4286] text-gray-700 bg-white border border-gray-300 rounded shadow-inner focus:outline-none focus:border-blue-500 focus:shadow-md resize-y" 
+    rows="4" 
+    name="txtDescription" 
+    id="txtDescription" 
+    [(ngModel)]="businessDescription" 
+    placeholder="Write Business Description">
+  </textarea>
+  
+  <!-- Business Trade and RL -->
+  <div class="flex flex-wrap -mx-4 mt-4">
+    <!-- Business/ Trade License No -->
+    <div class="w-full sm:w-1/2 px-4">
+      <div class="mb-4">
+        <app-input-field
+          label="Business/ Trade License No"
+          name="business_license_no"
+          id="business_license_no"
+          placeholder="Business/ Trade License No"
+          [maxLength]="30"
+          [value]="businessLicenseNo"
+          [isRequired]="false">
+        </app-input-field>
+      </div>
+    </div>
+  
+    <!-- RL No (Only for Recruiting Agency) -->
+    <div class="w-full sm:w-1/2 px-4">
+      <div class="mb-4">
+        <div class="flex items-center">
+          <span class="px-3 h-8 mt-3 text-sm text-gray-500 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md">RL -</span>
+          <app-input-field
+            label="RL No (Only for Recruiting Agency)"
+            name="rl_no"
+            id="rl_no"
+            placeholder="Enter Number Only"
+            [maxLength]="6"
+            [value]="rlNo"
+            [isRequired]="false">
+          </app-input-field>
+        </div>
+      </div>
+    </div>
+    <!-- Website URL -->
+    <div class="w-full px-4">
+      <div class="mb-4">
+        <app-input-field
+          label="Website URL"
+          name="website_url"
+          id="website_url"
+          placeholder="Type Website URL"
+          [maxLength]="50"
+          [value]="websiteUrl"
+          [isRequired]="false">
+        </app-input-field>
+      </div>
+    </div>
+  </div>
+  <hr>
+  
