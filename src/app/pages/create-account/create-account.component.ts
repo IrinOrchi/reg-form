@@ -6,11 +6,13 @@ import { CompanyAddressComponent } from "../../components/company-address/compan
 import { IndustryTypeComponent } from "../../components/industry-type/industry-type.component";
 import { BusinessDetailsComponent } from "../../components/business-details/business-details.component";
 import { ContactComponent } from "../../components/contact/contact.component";
+import { AccessibilityProfileComponent } from "../../components/accessibility-profile/accessibility-profile.component";
+import { VerificationCodeComponent } from "../../components/verification-code/verification-code.component";
 
 @Component({
   selector: 'app-create-account',
   standalone: true,
-  imports: [AccountInformationComponent, InputFieldComponent, CompanyInfoComponent, CompanyAddressComponent, IndustryTypeComponent, BusinessDetailsComponent, ContactComponent],
+  imports: [AccountInformationComponent, InputFieldComponent, CompanyInfoComponent, CompanyAddressComponent, IndustryTypeComponent, BusinessDetailsComponent, ContactComponent, AccessibilityProfileComponent, VerificationCodeComponent],
   templateUrl: './create-account.component.html',
   styleUrl: './create-account.component.css'
 })

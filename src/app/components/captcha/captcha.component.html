@@ -1,0 +1,17 @@
+<div class="form-group">
+    <img
+      [src]="captchaUrl"
+      alt="Captcha"
+      id="imgCaptcha"
+      tabindex="0"
+      class="border border-gray-400 my-2"
+    />
+  
+    <div class="refresh mt-2">
+      <button (click)="refreshCaptcha()" 
+              class="text-blue-600 hover:text-blue-800 focus:outline-none flex items-center">
+        <i class="icon-refresh mr-1"></i>Refresh
+      </button>
+    </div>
+  </div>
+  

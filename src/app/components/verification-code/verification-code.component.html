@@ -1,0 +1,61 @@
+<section class="p-4 bg-white rounded shadow-md">
+    <section class="my-6">
+    <!-- Verification Code Section -->
+    <p class="text-lg font-semibold mb-4">Verification Code</p>
+    
+    <div class="w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="col-span-1">
+        <app-captcha></app-captcha>
+      </div>
+      <div class="col-span-1">
+        <app-input-field
+          name="txtCaptchaCode"
+          id="txtCaptchaCode"
+          placeholder="Type the verification code"
+          [value]="''"
+          [maxLength]="6"
+          [isRequired]="false"
+        ></app-input-field>
+      </div>
+    </div>
+  
+    <!-- Pricing Policy Section -->
+    <div class="mt-6">
+      <h4 class="cursor-pointer border-separate box-border font-inherit leading-[1.1] text-inherit text-lg font-bold inline-block m-0">
+        Pricing Policy of Bdjobs.com recruitment services
+      </h4>
+      <div class="flex mt-3">
+        <div class="flex items-center">
+          <input 
+            name="policy_accept" 
+            id="policy_accept" 
+            type="checkbox" 
+            [(ngModel)]="isPolicyAccepted"
+            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-offset-0 focus:ring-2 cursor-pointer"
+          >
+        </div>
+        <div class="ml-3">
+          <label for="policy_accept" class="text-base font-normal text-black cursor-pointer">
+            I Have Read Pricing Policy And Accepted It
+          </label>
+        </div>
+      </div>            
+    </div>
+  </section>
+  
+  <hr>
+  
+  <!-- Submit Button Section -->
+  <section class="mt-8">
+    <div class="text-right">
+      <button 
+        (click)="onContinue()"
+        [disabled]="!isPolicyAccepted"
+        class="box-border m-0 font-inherit overflow-visible text-center text-base font-normal leading-normal align-middle whitespace-nowrap touch-manipulation select-none border border-transparent rounded inline-flex items-center bg-green-700 text-white text-lg px-5 py-3 shadow-md transition duration-300 ease-linear"
+        [ngClass]="{'cursor-not-allowed opacity-65': !isPolicyAccepted}"
+      >
+        Continue
+      </button>
+    </div>          
+  </section>
+  

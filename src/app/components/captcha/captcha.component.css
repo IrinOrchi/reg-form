@@ -1,0 +1,13 @@
+.form-group {
+    margin-bottom: 15px;
+  }
+  
+  .refresh button {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .refresh .icon-refresh {
+    margin-right: 5px;
+  }
+  

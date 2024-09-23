@@ -7,28 +7,28 @@ import { FormsModule, NgModel } from '@angular/forms';
   standalone: true,
   imports:[FormsModule, CommonModule],
   templateUrl: './industry-type.component.html',
-  styleUrls: ['./industry-type.component.scss']
+  styleUrls: ['./industry-type.component.css']
 })
 export class IndustryTypeComponent {
   searchQuery: string = '';
   selectedCategory: string = '';
 
   types = [
-    { label: 'Advertising Agency', value: 'Teaching' },
-    { label: 'Software Firm', value: 'Technology' },
+    { label: 'Advertising Agency', value: 'Finance' },
+    { label: 'Advertising Technology ', value: 'Technology' },
+    { label: 'App Developement', value: 'Technology' },
+    { label: 'Architecture Firm', value: 'Archtecture' },
     { label: 'Civil Engineering', value: 'Engineering' },
     { label: 'Electrical Engineering', value: 'Engineering' },
-    { label: 'Architecture Firm', value: 'Archtecture' },
-    { label: 'Hospitality Management', value: 'Hospitality' },
-    { label: 'NGO ', value: 'Healthcare' },
-    { label: 'Law Firm', value: 'Finance' },
-    { label: 'Educational Institute', value: 'Teaching' }
-    
+    { label: 'Software Development', value: 'Technology' },
+    { label: 'Healthcare Services', value: 'Healthcare' },
+    { label: 'Financial Consulting', value: 'Finance' },
+    { label: 'Hospitality Management', value: 'Hospitality' }
   ];
 
   filteredTypes = [...this.types]; 
 
-  // Handle search input change
+ 
   onSearchQueryChange() {
     this.filteredTypes = this.types.filter(type => 
       type.label.toLowerCase().includes(this.searchQuery.toLowerCase()));
